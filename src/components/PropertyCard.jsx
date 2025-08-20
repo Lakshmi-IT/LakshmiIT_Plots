@@ -1,12 +1,26 @@
 import { MapPin, Home, Calendar, Building } from 'lucide-react';
+import residentialPlot1 from '../assets/residential-plot-1.jpg';
+import residentialPlot2 from '../assets/residential-plot-2.jpg';
+import commercialPlot1 from '../assets/commercial-plot-1.jpg';
+import heroBg from '../assets/hero-bg.jpg';
 
 const PropertyCard = ({ property }) => {
+  const getPropertyImage = (imageKey) => {
+    const imageMap = {
+      'residential-plot-1': residentialPlot1,
+      'residential-plot-2': residentialPlot2,
+      'commercial-plot-1': commercialPlot1,
+      'hero-property': heroBg
+    };
+    return imageMap[imageKey] || residentialPlot1;
+  };
+
   return (
     <div className="bg-white rounded-xl card-shadow hover:shadow-xl transition-all duration-300 overflow-hidden animate-fade-in">
       {/* Property Image */}
       <div className="relative h-48 bg-gradient-to-r from-blue-400 to-green-400">
         <img 
-          src={property.image} 
+          src={getPropertyImage(property.image)} 
           alt={property.title}
           className="w-full h-full object-cover"
         />

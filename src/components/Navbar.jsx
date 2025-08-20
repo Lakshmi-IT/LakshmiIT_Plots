@@ -19,11 +19,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/cf834ea0-909b-47c9-a44b-c15360050885.png" 
-                alt="My Open Plots" 
-                className="h-8 w-auto"
-              />
+              <div className="w-10 h-10 bg-accent-orange rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">M</span>
+              </div>
               <div className="text-xl font-bold">
                 <span className="text-accent-orange">My</span>{' '}
                 <span className="text-accent-orange">Open</span>{' '}

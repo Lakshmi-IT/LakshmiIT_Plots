@@ -1,15 +1,14 @@
 import { Building, Calendar, MapPin } from 'lucide-react';
+import developerLogos from '../assets/developer-logos.jpg';
 
 const DeveloperCard = ({ developer }) => {
   return (
     <div className="bg-white rounded-xl card-shadow hover:shadow-xl transition-all duration-300 overflow-hidden p-6 text-center">
       {/* Developer Logo */}
-      <div className="bg-gray-100 rounded-lg p-4 mb-4 mx-auto w-24 h-24 flex items-center justify-center">
-        <img 
-          src={developer.logo} 
-          alt={developer.name}
-          className="max-w-full max-h-full object-contain"
-        />
+      <div className="bg-primary rounded-lg p-4 mb-4 mx-auto w-24 h-24 flex items-center justify-center">
+        <span className="text-white font-bold text-2xl">
+          {developer.name.split(' ').map(word => word[0]).join('').slice(0, 2)}
+        </span>
       </div>
 
       {/* Developer Info */}

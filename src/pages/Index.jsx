@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
+import SecondaryNavbar from '../components/SecondaryNavbar';
 import HeroSection from '../components/HeroSection';
 import PropertyCard from '../components/PropertyCard';
 import DeveloperCard from '../components/DeveloperCard';
 import FeaturesSection from '../components/FeaturesSection';
+import PlotsByTypeSection from '../components/PlotsByTypeSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('plots-city');
+
   const properties = [
     {
       id: 1,
@@ -17,7 +22,7 @@ const Index = () => {
       details: "P02000002101",
       detailsType: "Rera Number",
       price: "On Request",
-      image: "/lovable-uploads/d295d007-5ef8-49dd-b4d6-19200360a44a.png",
+      image: "residential-plot-1",
       status: null
     },
     {
@@ -31,7 +36,7 @@ const Index = () => {
       details: "Loan Facility",
       detailsType: "Loan Facility",
       price: "On Request",
-      image: "/lovable-uploads/c1eff6c6-bcbd-4919-bd36-632c7cf154a5.png"
+      image: "residential-plot-2"
     },
     {
       id: 3,
@@ -44,7 +49,7 @@ const Index = () => {
       details: "183 Sq.Yrd",
       detailsType: "Plot Size From",
       price: "On Request",
-      image: "/lovable-uploads/c1eff6c6-bcbd-4919-bd36-632c7cf154a5.png"
+      image: "commercial-plot-1"
     },
     {
       id: 4,
@@ -57,7 +62,7 @@ const Index = () => {
       details: "12346",
       detailsType: "Rera Number",
       price: "On Request",
-      image: "/lovable-uploads/c1eff6c6-bcbd-4919-bd36-632c7cf154a5.png",
+      image: "residential-plot-1",
       status: "Live Availability"
     }
   ];
@@ -68,24 +73,21 @@ const Index = () => {
       name: "Suchir India",
       location: "Banjara Hills, Hyderabad",
       established: "2006",
-      totalProjects: "15",
-      logo: "/lovable-uploads/50001e5c-3c7b-4b2b-a0c4-93aa313fffa3.png"
+      totalProjects: "15"
     },
     {
       id: 2,
       name: "Silpa Infratech",
       location: "Jubilee Hills, Hyderabad",
       established: "2010",
-      totalProjects: "12",
-      logo: "/lovable-uploads/50001e5c-3c7b-4b2b-a0c4-93aa313fffa3.png"
+      totalProjects: "12"
     },
     {
       id: 3,
       name: "MOP Infra Developers",
       location: "Kothaguda, Hyderabad",
       established: "1997",
-      totalProjects: "8",
-      logo: "/lovable-uploads/50001e5c-3c7b-4b2b-a0c4-93aa313fffa3.png"
+      totalProjects: "8"
     }
   ];
 
@@ -93,7 +95,7 @@ const Index = () => {
     {
       id: 1,
       title: "Iconic Infra Group RRR County",
-      location: "Choutuppal, Choutuppal",
+      location: "Choutuppal, Chouthuppal",
       developer: "Iconic Infra Group",
       area: "85 Acres",
       type: "HMDA",
@@ -101,7 +103,7 @@ const Index = () => {
       details: "160 Sq.Yrd",
       detailsType: "Plot Size From",
       price: "On Request",
-      image: "/lovable-uploads/cf834ea0-909b-47c9-a44b-c15360050885.png"
+      image: "hero-property"
     },
     {
       id: 2,
@@ -114,7 +116,7 @@ const Index = () => {
       details: "Available",
       detailsType: "Loan Facility",
       price: "On Request",
-      image: "/lovable-uploads/cf834ea0-909b-47c9-a44b-c15360050885.png"
+      image: "residential-plot-2"
     },
     {
       id: 3,
@@ -127,17 +129,21 @@ const Index = () => {
       details: "200 Sq.Yrd",
       detailsType: "Plot Size From",
       price: "On Request",
-      image: "/lovable-uploads/cf834ea0-909b-47c9-a44b-c15360050885.png"
+      image: "commercial-plot-1"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <SecondaryNavbar activeSection={activeSection} onSectionChange={setActiveSection} />
       
       <main>
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Plots By Type Section */}
+        <PlotsByTypeSection />
 
         {/* Featured Properties Section */}
         <section id="projects" className="py-16 bg-background">
@@ -236,7 +242,7 @@ const Index = () => {
         <FeaturesSection />
 
         {/* Action Buttons */}
-        <div className="fixed bottom-0 left-0 right-0 bg-primary p-4 flex justify-center space-x-4">
+        <div className="fixed bottom-0 left-0 right-0 bg-primary p-4 flex justify-center space-x-4 z-50">
           <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
             Enquiry Now
           </button>

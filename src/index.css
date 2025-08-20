@@ -136,6 +136,7 @@
 
   body {
     @apply bg-background text-foreground;
+    padding-bottom: 80px; /* Add padding for fixed action buttons */
   }
 
   /* Custom animations */
