@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropertyCard from './PropertyCard';
+import { Link } from 'react-router-dom';
 
 const PlotsByTypeSection = () => {
   const [activeTab, setActiveTab] = useState('residential');
@@ -113,18 +114,17 @@ const PlotsByTypeSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
             <span className="text-primary">🏘️ Plots By Type</span>
           </h2>
-          
+
           {/* Plot Type Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {plotTypes.map((type) => (
               <button
                 key={type.id}
                 onClick={() => setActiveTab(type.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeTab === type.id
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${activeTab === type.id
                     ? 'bg-primary text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {type.name}
                 <span className="ml-2 text-sm">({type.count})</span>
@@ -140,12 +140,14 @@ const PlotsByTypeSection = () => {
           ))}
         </div>
 
-        {/* Load More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
-            Load More Properties
-          </button>
-        </div>
+      
+        <Link to={"/projects"}>
+          <div className="text-center mt-12">
+            <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
+              Load More Properties
+            </button>
+          </div>
+        </Link>
       </div>
     </section>
   );

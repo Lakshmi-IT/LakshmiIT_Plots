@@ -24,12 +24,12 @@ const PropertyCard = ({ property }) => {
           alt={property.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-4 left-4 bg-white bg-opacity-90 rounded-lg px-2 py-1 text-xs font-semibold">
+        {/* <div className="absolute top-4 left-4 bg-white bg-opacity-90 rounded-lg px-2 py-1 text-xs font-semibold">
           Developed By
         </div>
         <div className="absolute top-8 left-4 text-xs text-gray-700 font-medium">
           {property.developer}
-        </div>
+        </div> */}
         {property.status && (
           <div className="absolute top-4 right-4 bg-primary text-white rounded-lg px-2 py-1 text-xs font-semibold">
             {property.status}
@@ -84,7 +84,7 @@ const PropertyCard = ({ property }) => {
         {/* Price and Action */}
         <div className="flex items-center justify-between">
           <div className="bg-primary text-white rounded-lg px-3 py-2">
-            <div className="text-xs">Price</div>
+            {/* <div className="text-xs">Price</div> */}
             <div className="font-semibold">{property.price}</div>
           </div>
           

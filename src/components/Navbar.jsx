@@ -5,11 +5,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Plots By Type', href: '#plots-type' },
-    { name: 'Developers', href: '#developers' },
-    { name: 'Resale Plots', href: '#resale-plots' }
+    // { name: 'Home', href: '#home' },
+    // { name: 'Projects', href: '#projects' },
+    // { name: 'Plots By Type', href: '#plots-type' },
+    // { name: 'Developers', href: '#developers' },
+    // { name: 'Resale Plots', href: '#resale-plots' }
   ];
 
   return (
@@ -24,8 +24,8 @@ const Navbar = () => {
               </div>
               <div className="text-xl font-bold">
                 <span className="text-accent-orange">My</span>{' '}
-                <span className="text-accent-orange">Open</span>{' '}
-                <span className="text-primary-foreground">Plots</span>
+                <span className="text-accent-orange">Plots</span>{' '}
+
               </div>
             </div>
           </div>
@@ -47,10 +47,8 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-primary-dark text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-light transition-colors duration-200">
-              Agent Hiring
-            </button>
-            <button className="bg-accent-orange text-white px-4 py-2 rounded-lg hover:bg-accent-orange-light transition-colors duration-200">
+            
+            <button className="bg-primary-dark text-white px-4 py-2 rounded-lg hover:bg-primary-light transition-colors duration-200">
               Post Project
             </button>
             <button className="bg-primary-dark text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-light transition-colors duration-200">

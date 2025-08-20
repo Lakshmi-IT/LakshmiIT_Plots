@@ -1,44 +1,49 @@
-import { Filter, SortDesc } from 'lucide-react';
+import { Link, useLocation } from "react-router-dom";
+import {
+  Home,
+  FolderKanban,
+  LayoutGrid,
+  Building2,
+  RefreshCcw,
+} from "lucide-react";
 
-const SecondaryNavbar = ({ activeSection, onSectionChange }) => {
+const SecondaryNavbar = () => {
+  const location = useLocation(); // Get current path
+
   const sections = [
-    { id: 'plots-city', name: 'Plots By City' },
-    { id: 'enquiry', name: '❓ Enquiry Now' },
-    { id: 'site-visit', name: '📅 Book Free Site Visit' },
-    { id: 'plots-projects', name: 'Plots By Projects' }
+    { name: "Home", href: "/", icon: Home },
+    { name: "Projects", href: "/projects", icon: FolderKanban },
+    { name: "Plots By Type", href: "/plots-type", icon: LayoutGrid },
+    { name: "Developers", href: "/developers", icon: Building2 },
+    { name: "Resale Plots", href: "/resale", icon: RefreshCcw },
   ];
 
   return (
     <div className="bg-primary-dark shadow-md sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3">
-          {/* Secondary Navigation */}
-          <div className="flex items-center space-x-6 overflow-x-auto">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => onSectionChange && onSectionChange(section.id)}
-                className={`whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  activeSection === section.id
-                    ? 'bg-white text-primary'
-                    : 'text-white hover:bg-primary-light'
-                }`}
-              >
-                {section.name}
-              </button>
-            ))}
-          </div>
+        <div className="flex items-center justify-center py-3">
+          <div className="hidden md:block">
+            <div className="flex items-center space-x-8">
+              {sections.map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.href;
 
-          {/* Filter and Sort */}
-          <div className="flex items-center space-x-4">
-            <button className="flex items-center space-x-2 text-white hover:text-accent-orange transition-colors duration-200">
-              <Filter size={18} />
-              <span className="hidden sm:inline">Filter</span>
-            </button>
-            <button className="flex items-center space-x-2 text-white hover:text-accent-orange transition-colors duration-200">
-              <SortDesc size={18} />
-              <span className="hidden sm:inline">Sort By</span>
-            </button>
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? "bg-accent-orange text-white"
+                        : "text-primary-foreground hover:text-accent-orange"
+                    }`}
+                  >
+                    <Icon size={16} />
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

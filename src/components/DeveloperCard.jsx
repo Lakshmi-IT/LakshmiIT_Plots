@@ -3,7 +3,7 @@ import developerLogos from '../assets/developer-logos.jpg';
 
 const DeveloperCard = ({ developer }) => {
   return (
-    <div className="bg-white rounded-xl card-shadow hover:shadow-xl transition-all duration-300 overflow-hidden p-6 text-center">
+    <div className="bg-white rounded-xl card-shadow hover:shadow-xl transition-all duration-300 overflow-hidden p-6 text-center border-2 border-gray-400">
       {/* Developer Logo */}
       <div className="bg-primary rounded-lg p-4 mb-4 mx-auto w-24 h-24 flex items-center justify-center">
         <span className="text-white font-bold text-2xl">

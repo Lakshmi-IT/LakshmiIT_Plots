@@ -135,8 +135,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <SecondaryNavbar activeSection={activeSection} onSectionChange={setActiveSection} />
+      {/* <Navbar />
+      <SecondaryNavbar activeSection={activeSection} onSectionChange={setActiveSection} /> */}
       
       <main>
         {/* Hero Section */}
@@ -166,90 +166,14 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Best Open Plot Ventures Section */}
-        <section id="resale-plots" className="py-16 bg-primary text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                🔍 Best Open Plot Ventures in Hyderabad
-              </h2>
-              <div className="text-lg mb-4">106 Results Found</div>
-              
-              {/* Filter Tabs */}
-              <div className="flex justify-center space-x-4 mb-8">
-                <button className="bg-white text-primary px-6 py-2 rounded-full">
-                  Ongoing (100)
-                </button>
-                <button className="bg-primary-light text-white px-6 py-2 rounded-full">
-                  Upcoming (0)
-                </button>
-                <button className="bg-primary-light text-white px-6 py-2 rounded-full">
-                  Completed (6)
-                </button>
-              </div>
+       
 
-              {/* Search and Sort */}
-              <div className="flex justify-center items-center space-x-4 mb-8">
-                <input
-                  type="text"
-                  placeholder="Search Here"
-                  className="px-4 py-2 rounded-lg text-gray-700 w-64"
-                />
-                <button className="bg-primary-dark text-white px-6 py-2 rounded-lg">
-                  Search
-                </button>
-                <select className="px-4 py-2 rounded-lg text-gray-700">
-                  <option>Sort By</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {properties.map((property) => (
-                <PropertyCard key={property.id} property={property} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Developers Section */}
-        <section id="developers" className="py-16 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
-                <span className="text-primary">🏛️ Best Open Plot Developers in Hyderabad</span>
-              </h2>
-              
-              {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-8">
-                <input
-                  type="text"
-                  placeholder="Search Company/Developer Name..."
-                  className="w-full px-6 py-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {developers.map((developer) => (
-                <DeveloperCard key={developer.id} developer={developer} />
-              ))}
-            </div>
-          </div>
-        </section>
-
+    
+    
         {/* Features Section */}
         <FeaturesSection />
 
-        {/* Action Buttons */}
-        <div className="fixed bottom-0 left-0 right-0 bg-primary p-4 flex justify-center space-x-4 z-50">
-          <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-            Enquiry Now
-          </button>
-          <button className="bg-accent-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-orange-light transition-colors duration-200">
-            Book Free Site Visit
-          </button>
-        </div>
+      
       </main>
     </div>
   );
