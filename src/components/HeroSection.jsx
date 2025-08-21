@@ -13,17 +13,24 @@ const HeroSection = () => {
         </h1>
         
         {/* Search bar */}
-        <div className="bg-white rounded-lg shadow-lg p-2 flex items-center max-w-3xl mx-auto mb-12">
+        <div className="bg-white rounded-lg shadow-lg p-2 flex lg:flex-row flex-col items-center max-w-3xl mx-auto lg:mb-12 mb-5 ">
           <input
             type="text"
             placeholder="City / Area / Project / Developer"
-            className="flex-1 px-4 py-3 text-gray-700 placeholder-gray-500 border-none outline-none rounded-l-lg"
+            className="flex-1  py-1 text-gray-700 placeholder-gray-500 border-none outline-none rounded-l-lg "
           />
-          <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200">
+          <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg lg:flex items-center gap-2 transition-colors duration-200 hidden">
             <Search size={20} />
             Search Properties
           </button>
         </div>
+        <div className='w-full flex justify-center items-center'>
+
+          <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg flex justify-center items-center gap-2 transition-colors duration-200 lg:hidden mb-3 ">
+            <Search size={20} />
+            Search Properties
+          </button>
+          </div>
 
         {/* Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">

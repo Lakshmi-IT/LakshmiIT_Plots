@@ -13,13 +13,13 @@ const SecondaryNavbar = () => {
   const sections = [
     { name: "Home", href: "/", icon: Home },
     { name: "Projects", href: "/projects", icon: FolderKanban },
-    { name: "Plots By Type", href: "/plots-type", icon: LayoutGrid },
+    // { name: "Plots By Type", href: "/plots-type", icon: LayoutGrid },
     { name: "Developers", href: "/developers", icon: Building2 },
     { name: "Resale Plots", href: "/resale", icon: RefreshCcw },
   ];
 
   return (
-    <div className="bg-primary-dark shadow-md sticky top-16 z-40">
+    <div className="bg-primary-dark shadow-md sticky top-16 z-40 lg:block hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center py-3">
           <div className="hidden md:block">

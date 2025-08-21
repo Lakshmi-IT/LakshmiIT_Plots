@@ -1,15 +1,22 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import {
+  Home,
+  FolderKanban,
+  LayoutGrid,
+  Building2,
+  RefreshCcw,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    // { name: 'Home', href: '#home' },
-    // { name: 'Projects', href: '#projects' },
-    // { name: 'Plots By Type', href: '#plots-type' },
-    // { name: 'Developers', href: '#developers' },
-    // { name: 'Resale Plots', href: '#resale-plots' }
+   { name: "Home", href: "/", icon: Home, styles:"hidden" },
+    { name: "Projects", href: "/projects", icon: FolderKanban , styles:"hidden"},
+    // { name: "Plots By Type", href: "/plots-type", icon: LayoutGrid },
+    { name: "Developers", href: "/developers", icon: Building2, styles:"hidden" },
+    { name: "Resale Plots", href: "/resale", icon: RefreshCcw, styles:"hidden" },
   ];
 
   return (
@@ -37,7 +44,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-primary-foreground hover:text-accent-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className={`text-primary-foreground hover:text-accent-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${item.styles==="hidden"? "lg:hidden":""}`}
                 >
                   {item.name}
                 </a>

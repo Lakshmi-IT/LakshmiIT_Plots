@@ -84,7 +84,7 @@ const Developers = () => {
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search by name, location, developer..."
-                            className="px-4 py-2 rounded-md text-gray-700 w-[500px] border-2 border-[#000000]"
+                            className="px-4 py-2 rounded-md text-gray-700 w-[500px] border-2 border-[#000000] mb-3"
                         />
                         <button className="bg-primary-light hover:bg-primary-dark text-white px-6 py-2 rounded-lg">
                             Search
