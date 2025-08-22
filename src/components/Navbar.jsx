@@ -7,6 +7,7 @@ import {
   Building2,
   RefreshCcw,
 } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,14 +80,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-primary-foreground hover:text-accent-orange block px-3 py-2 rounded-md text-base font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col space-y-2 mt-4">
                 <button className="bg-primary-dark text-primary-foreground px-4 py-2 rounded-lg">
